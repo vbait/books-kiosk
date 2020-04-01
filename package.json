@@ -1,20 +1,29 @@
 {
-  "name": "kiosk",
+  "name": "books-kiosk",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://vbait.github.io/books-kiosk",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.4.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env EXTEND_ESLINT=true react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "cross-env NODE_ENV=production ./node_modules/.bin/eslint --ext .js --ext .jsx src",
+    "lint:fix": "yarn lint --fix",
+    "format": "./node_modules/.bin/prettier \"**/*.{js,jsx,json}\" --write",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +39,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "gh-pages": "^2.2.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^2.0.2"
   }
 }

@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367
+https://kentcdodds.com/blog/application-state-management-with-react
+
 ## Available Scripts
 
 In the project directory, you can run:
