@@ -1,6 +1,4 @@
-{
-  "data": [
-    { "id": 1, "title": "Book", "author": "Vitalii", "date": "2015-01-10" },
-    { "id": 2, "title": "Book", "author": "Vitalii", "date": "2015-01-10" }
-  ]
-}
+[
+  { "id": "1", "title": "Book", "author": "Vitalii", "date": "2015-01-10" },
+  { "id": "2", "title": "Book", "author": "Vitalii", "date": "2015-01-10" }
+]
