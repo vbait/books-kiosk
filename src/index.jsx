@@ -4,12 +4,7 @@ import './index.scss';
 import Dashboard from './Dashboard';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Dashboard />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+ReactDOM.render(<Dashboard />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

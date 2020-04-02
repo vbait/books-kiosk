@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
+import { displayDate, displayTitle } from '../../utils/formatters';
 
-function BooksList() {
+function BooksList({ book, onEdit, onDelete }) {
+  const handleEdit = useCallback(() => {
+    onEdit(book);
+  }, [book, onEdit]);
+
+  const handleDelete = useCallback(() => {
+    onDelete(book);
+  }, [book, onDelete]);
+
   return (
     <div className="media text-muted pt-3">
       <svg
@@ -20,16 +30,16 @@ function BooksList() {
       <div className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         <div className="d-flex justify-content-between">
           <div>
-            <strong className="d-block text-gray-dark">@username</strong>
-            <h6 className="mb-0">Book Title</h6>
-            <small>12/12/2345</small>
+            <h6 className="mb-0">{displayTitle(book.title)}</h6>
+            <strong className="d-block text-gray-dark">{book.author}</strong>
+            <small>{displayDate(book.date)}</small>
           </div>
           <div>
-            <Button variant="link" size="sm">
+            <Button variant="link" size="sm" onClick={handleEdit}>
               Edit
             </Button>
             |
-            <Button variant="link danger" size="sm">
+            <Button variant="link danger" size="sm" onClick={handleDelete}>
               Delete
             </Button>
           </div>
@@ -38,5 +48,21 @@ function BooksList() {
     </div>
   );
 }
+
+BooksList.defaultProps = {
+  onEdit: () => {},
+  onDelete: () => {},
+};
+
+BooksList.propTypes = {
+  onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
+
+  book: PropTypes.shape({
+    author: PropTypes.string,
+    title: PropTypes.string,
+    date: PropTypes.string,
+  }).isRequired,
+};
 
 export default BooksList;
