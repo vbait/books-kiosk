@@ -8,10 +8,6 @@
   },
   "rules": {
     "linebreak-style": 0,
-    "no-underscore-dangle": [
-      "error",
-      { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }
-    ],
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "object-curly-newline": "off",
     "comma-dangle": [2, "always-multiline"]
