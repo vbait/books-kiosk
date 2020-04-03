@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import InputMask from 'react-input-mask';
@@ -17,11 +17,10 @@ const DateInput = ({ value, dateFormat, onChange, ...other }) => {
     }
   };
 
-  const date = DateTime.fromFormat(value || '', DATE_ISO_FORMAT);
-  let formattedValue = value;
-  if (date.isValid) {
-    formattedValue = date.toFormat(dateFormat);
-  }
+  const formattedValue = useMemo(() => {
+    const date = DateTime.fromFormat(value || '', DATE_ISO_FORMAT);
+    return date.isValid ? date.toFormat(dateFormat) : value;
+  }, [value, dateFormat]);
 
   return (
     <InputMask
@@ -45,4 +44,4 @@ DateInput.propTypes = {
   dateFormat: PropTypes.string.isRequired,
 };
 
-export default DateInput;
+export default memo(DateInput);

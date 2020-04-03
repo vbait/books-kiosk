@@ -24,6 +24,7 @@ const FormField = (props) => {
     controlId,
     placeholder,
     dateFormat,
+    validateFields,
   } = props;
 
   const otherProps = { placeholder };
@@ -32,7 +33,7 @@ const FormField = (props) => {
   }
 
   return (
-    <Field name={name} validate={validate}>
+    <Field name={name} validate={validate} validateFields={validateFields}>
       {({ input, meta }) => {
         const { error, submitError, dirtySinceLastSubmit } = meta;
         const isSubmitErrors = !!(!dirtySinceLastSubmit && submitError);
@@ -71,11 +72,12 @@ FormField.defaultProps = {
   helpText: undefined,
   placeholder: undefined,
   dateFormat: undefined,
+  validateFields: undefined,
 };
 
 FormField.propTypes = {
   validate: PropTypes.func,
-  control: PropTypes.func,
+  control: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
@@ -83,6 +85,7 @@ FormField.propTypes = {
   controlId: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   dateFormat: PropTypes.string,
+  validateFields: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FormField;
