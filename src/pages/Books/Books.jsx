@@ -38,7 +38,7 @@ function Books() {
     [alertToogle],
   );
 
-  const handleDeleteBook = useCallback(
+  const handleConfirmDeleteBook = useCallback(
     (book) => {
       setInitData(null);
       deleteBook(book);
@@ -99,7 +99,7 @@ function Books() {
         }
         show={showAlert}
         onClose={alertToogle}
-        onDelete={handleDeleteBook}
+        onDelete={handleConfirmDeleteBook}
       />
     </>
   );
