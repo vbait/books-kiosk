@@ -13,7 +13,7 @@ Demo [here](https://vbait.github.io/books-kiosk/)
 - react-bootstrap
 - react-final-form
 - luxon (to work with dates)
-- eslint
+- eslint (airbnb rules)
 - prettier
 - no redux or similar libraries, just native react state management ([why](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367))
 
