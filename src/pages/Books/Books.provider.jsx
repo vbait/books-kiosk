@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { bookReducer, initialState, ACTIONS } from './store';
 import fetchBooksData from '../../repository';
+import validate from './validate';
 
 const BooksContext = createContext();
 
@@ -11,23 +12,27 @@ function BooksProvider({ children }) {
 
   const fetchBooks = useCallback(() => {
     dispatch({ type: ACTIONS.FETCH });
-    fetchBooksData().then((payload) => {
+    return fetchBooksData().then((payload) => {
       dispatch({ type: ACTIONS.SUCCESS, payload });
     });
   }, [dispatch]);
 
-  const editBook = useCallback(
+  const changeBook = useCallback(
     (payload) => {
-      dispatch({ type: ACTIONS.EDIT, payload });
+      const errors = validate(state.data, payload);
+      if (errors) {
+        const error = Error('Not valid');
+        error.fields = errors;
+        return Promise.reject(error);
+      }
+      if (payload.id) {
+        dispatch({ type: ACTIONS.EDIT, payload });
+      } else {
+        dispatch({ type: ACTIONS.ADD, payload: { ...payload, id: uuidv4() } });
+      }
+      return Promise.resolve();
     },
-    [dispatch],
-  );
-
-  const addBook = useCallback(
-    (payload) => {
-      dispatch({ type: ACTIONS.ADD, payload: { ...payload, id: uuidv4() } });
-    },
-    [dispatch],
+    [state, dispatch],
   );
 
   const deleteBook = useCallback(
@@ -38,8 +43,13 @@ function BooksProvider({ children }) {
   );
 
   const value = React.useMemo(
-    () => ({ state, fetchBooks, editBook, addBook, deleteBook }),
-    [state, fetchBooks, editBook, addBook, deleteBook],
+    () => ({
+      state,
+      fetchBooks,
+      changeBook,
+      deleteBook,
+    }),
+    [state, fetchBooks, changeBook, deleteBook],
   );
 
   return (

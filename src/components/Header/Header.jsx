@@ -6,15 +6,6 @@ function Header() {
       <a className="navbar-brand mr-auto mr-lg-0" href=".">
         Books Kiosk
       </a>
-      <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href=".">
-              Dashboard
-            </a>
-          </li>
-        </ul>
-      </div>
     </nav>
   );
 }

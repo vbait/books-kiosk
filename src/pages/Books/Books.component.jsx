@@ -15,6 +15,7 @@ function Books({ books, onAdd, onEdit, onDelete }) {
           onDelete={onDelete}
         />
       ))}
+      {!books.length && <div>Your kiosk is empty. Please add a book.</div>}
       <BooksList.Footer>
         <Button variant="link" size="sm" onClick={onAdd}>
           Add Book

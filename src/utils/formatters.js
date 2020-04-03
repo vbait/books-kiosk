@@ -6,5 +6,13 @@ export const displayDate = (value, format = DATE_ISO_FORMAT) => {
 };
 
 export const displayTitle = (value) => {
-  return value;
+  const newValue = value
+    .replace(/[^a-zA-Z\s]+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+    .split(' ')
+    .map((v) => v.replace(v.charAt(0), v.charAt(0).toUpperCase()))
+    .join(' ');
+  return newValue;
 };

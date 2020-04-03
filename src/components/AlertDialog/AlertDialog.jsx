@@ -34,7 +34,7 @@ AlertDialog.propTypes = {
   onClose: PropTypes.func,
   onDelete: PropTypes.func,
   show: PropTypes.bool,
-  message: PropTypes.string,
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   data: PropTypes.any, // eslint-disable-line react/forbid-prop-types
 };
 
