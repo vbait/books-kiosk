@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/books-kiosk/static/css/main.b807b460.chunk.css",
-    "main.js": "/books-kiosk/static/js/main.9b3c44c8.chunk.js",
-    "main.js.map": "/books-kiosk/static/js/main.9b3c44c8.chunk.js.map",
+    "main.js": "/books-kiosk/static/js/main.681deb6c.chunk.js",
+    "main.js.map": "/books-kiosk/static/js/main.681deb6c.chunk.js.map",
     "runtime-main.js": "/books-kiosk/static/js/runtime-main.eed4bb2d.js",
     "runtime-main.js.map": "/books-kiosk/static/js/runtime-main.eed4bb2d.js.map",
     "static/js/2.36c224f6.chunk.js": "/books-kiosk/static/js/2.36c224f6.chunk.js",
     "static/js/2.36c224f6.chunk.js.map": "/books-kiosk/static/js/2.36c224f6.chunk.js.map",
     "index.html": "/books-kiosk/index.html",
-    "precache-manifest.e7a4878053a82443cd4421428afab085.js": "/books-kiosk/precache-manifest.e7a4878053a82443cd4421428afab085.js",
+    "precache-manifest.d85074064f38224189826ecc0a7814f6.js": "/books-kiosk/precache-manifest.d85074064f38224189826ecc0a7814f6.js",
     "service-worker.js": "/books-kiosk/service-worker.js",
     "static/css/main.b807b460.chunk.css.map": "/books-kiosk/static/css/main.b807b460.chunk.css.map",
     "static/js/2.36c224f6.chunk.js.LICENSE.txt": "/books-kiosk/static/js/2.36c224f6.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.eed4bb2d.js",
     "static/js/2.36c224f6.chunk.js",
     "static/css/main.b807b460.chunk.css",
-    "static/js/main.9b3c44c8.chunk.js"
+    "static/js/main.681deb6c.chunk.js"
   ]
 }
