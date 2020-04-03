@@ -6,8 +6,8 @@ import { DateInput } from '../../components/Controls';
 import { INPUT_DATE_FORMAT } from '../../constants';
 
 const formValidators = {
-  title: validators.required,
-  author: validators.required,
+  title: validators.composeValidators(validators.required, validators.text),
+  author: validators.composeValidators(validators.required, validators.text),
   date: validators.composeValidators(validators.required, validators.date()),
 };
 
