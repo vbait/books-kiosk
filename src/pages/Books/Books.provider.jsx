@@ -1,8 +1,8 @@
 import React, { createContext, useCallback, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import { bookReducer, initialState, ACTIONS } from './store';
 import fetchBooksData from '../../repository';
+import bookReducer, { initialState, ACTIONS } from './bookReducer';
 import validate from './validate';
 
 const BooksContext = createContext();

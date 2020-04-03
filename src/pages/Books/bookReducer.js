@@ -43,4 +43,5 @@ function bookReducer(state, action) {
   }
 }
 
-export { bookReducer, initialState, ACTIONS };
+export { initialState, ACTIONS };
+export default bookReducer;
