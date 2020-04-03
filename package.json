@@ -17,6 +17,7 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-final-form": "^6.4.0",
+    "react-input-mask": "^2.0.4",
     "react-scripts": "3.4.1",
     "uuid": "^7.0.3"
   },

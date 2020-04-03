@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
+import InputMask from 'react-input-mask';
 import { DateTime } from 'luxon';
 import { DATE_ISO_FORMAT } from '../../constants';
 
@@ -21,8 +22,16 @@ const DateInput = ({ value, dateFormat, onChange, ...other }) => {
   if (date.isValid) {
     formattedValue = date.toFormat(dateFormat);
   }
+
   return (
-    <Form.Control value={formattedValue} {...other} onChange={handleChange} />
+    <InputMask
+      {...other}
+      mask="99/99/9999"
+      value={formattedValue}
+      onChange={handleChange}
+    >
+      {(inputProps) => <Form.Control {...inputProps} value={formattedValue} />}
+    </InputMask>
   );
 };
 
