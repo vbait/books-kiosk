@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": false,
   "homepage": "http://vbait.github.io/books-kiosk",
+  "author": "Vitalii Baitaliuk <vitalii.baitaliuk@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -45,11 +47,16 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react-hooks": "^3.0.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.2"
