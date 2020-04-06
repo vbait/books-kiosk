@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/books-kiosk/static/css/main.b807b460.chunk.css",
-    "main.js": "/books-kiosk/static/js/main.1119c1ad.chunk.js",
-    "main.js.map": "/books-kiosk/static/js/main.1119c1ad.chunk.js.map",
+    "main.js": "/books-kiosk/static/js/main.bc404216.chunk.js",
+    "main.js.map": "/books-kiosk/static/js/main.bc404216.chunk.js.map",
     "runtime-main.js": "/books-kiosk/static/js/runtime-main.eed4bb2d.js",
     "runtime-main.js.map": "/books-kiosk/static/js/runtime-main.eed4bb2d.js.map",
-    "static/js/2.4adca043.chunk.js": "/books-kiosk/static/js/2.4adca043.chunk.js",
-    "static/js/2.4adca043.chunk.js.map": "/books-kiosk/static/js/2.4adca043.chunk.js.map",
+    "static/js/2.227073fc.chunk.js": "/books-kiosk/static/js/2.227073fc.chunk.js",
+    "static/js/2.227073fc.chunk.js.map": "/books-kiosk/static/js/2.227073fc.chunk.js.map",
     "index.html": "/books-kiosk/index.html",
-    "precache-manifest.85269dd773a3b3bb65041ddbaa8fdf97.js": "/books-kiosk/precache-manifest.85269dd773a3b3bb65041ddbaa8fdf97.js",
+    "precache-manifest.6c12fcb724dd11be8024b2f5bf9ae155.js": "/books-kiosk/precache-manifest.6c12fcb724dd11be8024b2f5bf9ae155.js",
     "service-worker.js": "/books-kiosk/service-worker.js",
     "static/css/main.b807b460.chunk.css.map": "/books-kiosk/static/css/main.b807b460.chunk.css.map",
-    "static/js/2.4adca043.chunk.js.LICENSE.txt": "/books-kiosk/static/js/2.4adca043.chunk.js.LICENSE.txt",
+    "static/js/2.227073fc.chunk.js.LICENSE.txt": "/books-kiosk/static/js/2.227073fc.chunk.js.LICENSE.txt",
     "static/media/NoImage.png": "/books-kiosk/static/media/NoImage.a06c99c1.png",
     "static/media/logo.svg": "/books-kiosk/static/media/logo.987cc879.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.eed4bb2d.js",
-    "static/js/2.4adca043.chunk.js",
+    "static/js/2.227073fc.chunk.js",
     "static/css/main.b807b460.chunk.css",
-    "static/js/main.1119c1ad.chunk.js"
+    "static/js/main.bc404216.chunk.js"
   ]
 }

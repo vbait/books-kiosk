@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "03db10411b618abac681075747364fb1",
+    "revision": "ff5ae8da42e0e73d8196684d00093a5b",
     "url": "/books-kiosk/index.html"
   },
   {
-    "revision": "6dd2a0b95eead28ea499",
+    "revision": "390533da8abb99d3ba1c",
     "url": "/books-kiosk/static/css/main.b807b460.chunk.css"
   },
   {
-    "revision": "8d93c80a0ea97a9f99af",
-    "url": "/books-kiosk/static/js/2.4adca043.chunk.js"
+    "revision": "45e7851c59cea28a4ba0",
+    "url": "/books-kiosk/static/js/2.227073fc.chunk.js"
   },
   {
-    "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/books-kiosk/static/js/2.4adca043.chunk.js.LICENSE.txt"
+    "revision": "3453b8997016469371284a28c0e873e2",
+    "url": "/books-kiosk/static/js/2.227073fc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6dd2a0b95eead28ea499",
-    "url": "/books-kiosk/static/js/main.1119c1ad.chunk.js"
+    "revision": "390533da8abb99d3ba1c",
+    "url": "/books-kiosk/static/js/main.bc404216.chunk.js"
   },
   {
     "revision": "2a789cc8f95c3d76fffa",
