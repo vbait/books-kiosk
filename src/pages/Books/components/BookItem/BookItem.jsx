@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
-import { displayDate, displayTitle } from '../../utils/formatters';
+import { displayDate, displayTitle } from '../../../../utils/formatters';
 import NoImageIcon from './NoImage.png';
 
 function BooksList({ book, onEdit, onDelete }) {

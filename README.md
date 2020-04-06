@@ -10,12 +10,14 @@ Demo [here](https://vbait.github.io/books-kiosk/)
 
 - create-react-app
 - bootstrap
+- rematch (Redux best practices without the boilerplate.)
 - react-bootstrap
 - react-final-form
 - luxon (to work with dates)
 - eslint (airbnb rules)
 - prettier
-- no redux or similar libraries, just native react state management ([why](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367))
+
+To see the solution without redux, check this branch [react state](https://github.com/vbait/books-kiosk/tree/feature/react-state). Why you can choose it instead of redux read [here](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367).
 
 ### Requirements
 

@@ -1,18 +1,16 @@
-import React, { useEffect, useContext, useCallback, useState } from 'react';
-import { BooksContext } from './Books.provider';
+import React, { useEffect, useCallback, useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import BooksComponent from './Books.component';
 import BooksFormWindow from './Books.form';
 import Loader from '../../components/Loader';
-import Error from '../../components/Error';
 import AlertDialog from '../../components/AlertDialog';
 import useToggle from '../../hooks/useToggle';
 import { displayTitle } from '../../utils/formatters';
+import validate from './validate';
 
-function Books() {
-  const { state, fetchBooks, deleteBook, changeBook } = useContext(
-    BooksContext,
-  );
-  const { data, loading, error } = state;
+function BooksContainer({ books, loading, fetch, changeBook, deleteBook }) {
   const [showAlert, alertToogle] = useToggle(false);
   const [showBook, bookToogle] = useToggle(false);
   const [initData, setInitData] = useState(null);
@@ -49,33 +47,34 @@ function Books() {
 
   const handleSubmit = useCallback(
     (book) => {
-      return changeBook(book)
-        .then(() => {
-          bookToogle();
-        })
-        .catch((e) => {
-          return e.fields;
-        });
+      changeBook(book);
+      bookToogle();
     },
     [bookToogle, changeBook],
   );
 
+  const handleValidate = useCallback(
+    ({ title }) => {
+      if (title) {
+        return validate(books, { ...initData, title });
+      }
+      return undefined;
+    },
+    [initData, books],
+  );
+
   useEffect(() => {
-    fetchBooks();
-  }, [fetchBooks]);
+    fetch();
+  }, [fetch]);
 
-  if (loading || !data) {
+  if (loading) {
     return <Loader />;
-  }
-
-  if (error) {
-    return <Error />;
   }
 
   return (
     <>
       <BooksComponent
-        books={data}
+        books={books}
         onAdd={handleAdd}
         onEdit={handleEdit}
         onDelete={handleDelete}
@@ -85,6 +84,7 @@ function Books() {
         show={showBook}
         onClose={bookToogle}
         onSubmit={handleSubmit}
+        validate={handleValidate}
       />
       <AlertDialog
         data={initData}
@@ -105,4 +105,39 @@ function Books() {
   );
 }
 
-export default Books;
+BooksContainer.defaultProps = {
+  fetch: () => {},
+  changeBook: () => {},
+  deleteBook: () => {},
+  books: [],
+  loading: false,
+};
+
+BooksContainer.propTypes = {
+  fetch: PropTypes.func,
+  changeBook: PropTypes.func,
+  deleteBook: PropTypes.func,
+  books: PropTypes.arrayOf(PropTypes.object),
+  loading: PropTypes.bool,
+};
+
+const mapState = (state) => ({
+  books: state.books,
+  loading: state.loading.models.books,
+});
+
+const mapDispatch = (dispatch) => ({
+  fetch: () => dispatch.books.fetchBooks(),
+  changeBook: (book) => {
+    if (book.id) {
+      dispatch.books.edit(book);
+    } else {
+      dispatch.books.add({ ...book, id: uuidv4() });
+    }
+  },
+  deleteBook: (book) => {
+    dispatch.books.delete(book);
+  },
+});
+
+export default connect(mapState, mapDispatch)(BooksContainer);
