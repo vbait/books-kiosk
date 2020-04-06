@@ -4,6 +4,7 @@ const ACTIONS = {
   FETCH: 'FETCH',
   SUCCESS: 'SUCCESS',
   ERROR: 'ERROR',
+  ADD: 'ADD',
   EDIT: 'EDIT',
   DELETE: 'DELETE',
 };
@@ -32,10 +33,7 @@ function bookReducer(state, action) {
     }
     case ACTIONS.DELETE: {
       const { payload: book } = action;
-      const books = [...state.data];
-      const index = books.findIndex(({ id }) => book.id === id);
-      books.splice(index, 1);
-      return { ...state, data: books };
+      return state.data.filter(({ id }) => id !== book.id);
     }
     default: {
       throw new Error(`Unsupported action type: ${action.type}`);
