@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
-import BooksList from '../../components/BooksList';
-import BookItem from '../../components/BookItem';
+import BooksList from './components/BooksList';
+import BookItem from './components/BookItem';
 
 function Books({ books, onAdd, onEdit, onDelete }) {
   return (

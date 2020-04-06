@@ -11,7 +11,7 @@ const formValidators = {
   date: validators.composeValidators(validators.required, validators.date()),
 };
 
-function BookManipulationWindow({ show, data, onClose, onSubmit }) {
+function BookManipulationWindow({ show, data, onClose, onSubmit, validate }) {
   const handleSubmit = useCallback(
     (values) => {
       return onSubmit({ ...data, ...values });
@@ -24,7 +24,7 @@ function BookManipulationWindow({ show, data, onClose, onSubmit }) {
       <Modal.Header closeButton>
         <Modal.Title>{data ? 'Edit Book' : 'Add Book'}</Modal.Title>
       </Modal.Header>
-      <Form onSubmit={handleSubmit} initialValues={data}>
+      <Form onSubmit={handleSubmit} initialValues={data} validate={validate}>
         {() => (
           <>
             <Modal.Body>
@@ -76,6 +76,7 @@ function BookManipulationWindow({ show, data, onClose, onSubmit }) {
 BookManipulationWindow.defaultProps = {
   onClose: () => {},
   onSubmit: () => {},
+  validate: () => {},
   show: false,
   data: undefined,
 };
@@ -83,6 +84,7 @@ BookManipulationWindow.defaultProps = {
 BookManipulationWindow.propTypes = {
   onClose: PropTypes.func,
   onSubmit: PropTypes.func,
+  validate: PropTypes.func,
   show: PropTypes.bool,
   data: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
